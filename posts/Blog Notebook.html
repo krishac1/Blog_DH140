@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DH Final Project - Krisha Chokshi – DGT HUM 140 Blog - Krisha Chokshi</title>
+<title>DH Final Project Blog - Krisha Chokshi – DGT HUM 140 Blog - Krisha Chokshi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">DH Final Project - Krisha Chokshi</h1>
+      <h1 class="title">DH Final Project Blog - Krisha Chokshi</h1>
                       </div>
   </div>
     
@@ -211,14 +211,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Tal, Orlee. “Council Post: What I’ve Learned as a Female CEO in a Male-Dominated Industry.” <em>Forbes</em>. Accessed July 31, 2024. <a href="https://www.forbes.com/sites/forbestechcouncil/2021/02/10/what-ive-learned-as-a-female-ceo-in-a-male-dominated-industry/">https://www.forbes.com/sites/forbestechcouncil/2021/02/10/what-ive-learned-as-a-female-ceo-in-a-male-dominated-industry/</a>.</p>
 <p>Pew Research Center. “Gender Pay Gap Facts.” Last modified March 1, 2023. Accessed July 31, 2024. <a href="https://www.pewresearch.org/short-reads/2023/03/01/gender-pay-gap-facts/">https://www.pewresearch.org/short-reads/2023/03/01/gender-pay-gap-facts/</a>.</p>
 <p>Damour, Lisa. “Why Girls Beat Boys at School and Lose to Them at the Office.” <em>The New York Times</em>. February 7, 2019. Accessed July 31, 2024. <a href="https://www.nytimes.com/2019/02/07/opinion/sunday/girls-school-confidence.html">https://www.nytimes.com/2019/02/07/opinion/sunday/girls-school-confidence.html</a>.</p>
-<p>Here is the process we will follow as we embark on this journey: * We will first explore 3 preliminary data visualizations and their analysis. * Then we will dive into 4 more specific data visualizations, and analyze these alongisde supplementary articles. * Finally, we will zoom out and view the bigger picture of the primary research question by connecting each of these data visualizations by answering the sub-questions.</p>
 </section>
 </section>
-<section id="methods-of-research---preliminary-data-visualizations" class="level2">
-<h2 class="anchored" data-anchor-id="methods-of-research---preliminary-data-visualizations">Methods of Research - Preliminary Data Visualizations</h2>
-<p>In this section we will discuss the <em>methods</em> to garner some <strong>preliminary</strong> data visualizations and explore what their <em>results</em> mean to our research.</p>
-<section id="preliminary-visualization-1---professional-representation-by-gender" class="level3">
-<h3 class="anchored" data-anchor-id="preliminary-visualization-1---professional-representation-by-gender">Preliminary Visualization #1 - Professional Representation by Gender</h3>
+<section id="methods-of-research" class="level2">
+<h2 class="anchored" data-anchor-id="methods-of-research">Methods of Research</h2>
+<section id="professional-representation-by-gender" class="level3">
+<h3 class="anchored" data-anchor-id="professional-representation-by-gender">Professional Representation by Gender</h3>
 <p>I will start by comparing professional representation by gender and examining the M:F ratio in some popular jobs. I scoured the internet for potential data sources that may display this. I seek to partially answer the sub-question: <strong>What does professional representation look like by gender in popular jobs?</strong></p>
 <p>Here is a site I found that accomplishes this: https://data.gov.ie/dataset/gender-breakdown-by-grade-within-grade-stream/resource/f78cefe7-7170-4184-b21d-4bee89e2c13f</p>
 <p>This bar plot fully displays the male to female ratio for each of these roles so that we can understand which jobs are more popular for each gender.</p>
@@ -256,116 +254,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>However, we want to be able to see a better overall view of which jobs exactly are more popular for each gender so I decided to look through the data to figure this out and list the Male/Female dominated ones.</p>
-<div id="c6e74b00" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Load and convert percent to float</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"gender_by_profession.csv"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Females'</span>] <span class="op">=</span> df[<span class="st">'Percentage of Females in Grade'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Males'</span>] <span class="op">=</span> df[<span class="st">'Percentage of Males in Grade'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Filter for jobs with higher percentages for both</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>male_dominated_jobs <span class="op">=</span> df[df[<span class="st">'Males'</span>] <span class="op">&gt;</span> df[<span class="st">'Females'</span>]]</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>female_dominated_jobs <span class="op">=</span> df[df[<span class="st">'Females'</span>] <span class="op">&gt;</span> df[<span class="st">'Males'</span>]]</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Print DataFrame for roles where either dominate</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Male Dominated Jobs:"</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(male_dominated_jobs[[<span class="st">'Grade '</span>, <span class="st">'Males'</span>, <span class="st">'Females'</span>]])</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Female Dominated Jobs:"</span>)</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(female_dominated_jobs[[<span class="st">'Grade '</span>, <span class="st">'Females'</span>, <span class="st">'Males'</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Male Dominated Jobs:
-                            Grade    Males  Females
-0                SECRETARY GENERAL  100.00     0.00
-1              ASSISTANT SECRETARY   66.67    33.33
-2                        PRINCIPAL   88.89    11.11
-3              ASSISTANT PRINCIPAL   68.00    32.00
-16              SERVICES ATTENDANT   54.55    45.45
-17                SERVICES OFFICER   89.19    10.81
-19  DIRECTOR METEORLOGICAL SERVICE  100.00     0.00
-20                   LEGAL ADVISOR  100.00     0.00
-21             INSPECTOR OF AUDITS  100.00     0.00
-22      ASST DIRECTOR MET SERVICES  100.00     0.00
-23  PRINCIPAL ADVISOR HIGHER LEVEL  100.00     0.00
-24               PRINCIPAL AUDITOR  100.00     0.00
-25                  SENIOR ADVISER  100.00     0.00
-26   SENIOR ASSISTANT FIRE ADVISOR  100.00     0.00
-27            SENIOR METEOROLOGIST  100.00     0.00
-28     ARCHITECTURAL/ENG INSPECTOR   94.74     5.26
-29          ASSISTANT FIRE ADVISOR  100.00     0.00
-30             AUDITOR ENVIRONMENT   80.00    20.00
-31          ENGINEER GRADE 1 CIVIL   75.00    25.00
-32               INSPECTOR GRADE 2  100.00     0.00
-33            INSPECTOR MECHANICAL  100.00     0.00
-34                   METEOROLOGIST   74.19    25.81
-35    PRINCIPAL METEOROLOGICAL OFF  100.00     0.00
-36       QUANTITY SURVEYOR GRADE 1  100.00     0.00
-37            SENIOR ARCHAEOLOGIST  100.00     0.00
-38   SUPERVISING HOUSING INSPECTOR   85.71    14.29
-42   ASSISTANT AUDITOR ENVIRONMENT   66.67    33.33
-43          ENGINEER GRADE 3 CIVIL  100.00     0.00
-44               HOUSING INSPECTOR   66.67    33.33
-45       SENIOR BUILDING INSPECTOR  100.00     0.00
-46           SENIOR VEHICLE TESTER  100.00     0.00
-47       SUPERVISORY DRIVER TESTER  100.00     0.00
-48                         AUDITOR  100.00     0.00
-49             CHIEF DRIVER TESTER  100.00     0.00
-51   SENIOR METEOROLOGICAL OFFICER   95.74     4.26
-52        TECHNICAL GRADES LEVEL 4  100.00     0.00
-53              BUILDING INSPECTOR  100.00     0.00
-54                   DRIVER TESTER   93.46     6.54
-55        DRIVER TESTER - CONTRACT  100.00     0.00
-56          METEOROLOGICAL OFFICER   85.71    14.29
-57                  VEHICLE TESTER  100.00     0.00
-
-Female Dominated Jobs:
-                           Grade   Females  Males
-5        HIGHER EXECUTIVE OFFICER    53.51  46.49
-6              PERSONAL ASSISTANT   100.00   0.00
-7               EXECUTIVE OFFICER    57.64  42.36
-8              PERSONAL SECRETARY   100.00   0.00
-9           SECRETARIAL ASSISTANT    66.67  33.33
-10                  STAFF OFFICER    75.76  24.24
-11               CLERICAL OFFICER    85.71  14.29
-12         CLERICAL OFF TEMPORARY   100.00   0.00
-13  VISUALLY IMPAIRED TELEPHONIST    66.67  33.33
-14                        CLEANER   100.00   0.00
-15            CLEANER - PART TIME   100.00   0.00
-18     SUPERINTENDENT OF CLEANERS   100.00   0.00
-39         ADMINISTRATIVE OFFICER   100.00   0.00
-40                  ARCHAEOLOGIST   100.00   0.00
-41                      ARCHITECT   100.00   0.00
-50                      LIBRARIAN   100.00   0.00</code></pre>
-</div>
-</div>
 <p>This data essentially provides some insight into the gender dynamics within specific fields, and helps uncover patterns of occupational segregation / gender-based disparities. Some observations we can make is that there are 39 roles for Male-dominated jobs, and out of these 27 roles are entirely male represented. The 27 roles with near-complete male dominance include Secretarial and Advisory roles, Technical and Engineering Fields, Meterological Services, and Auditing and Inspection. This indicates a severe gender imbalance and reflects historical trends where roles involving technical expertise / high-stakes decision making are typically entirely male dominated. Contrastingly out of the 16 roles that are Female-dominated, the 9 that are entirely female are Assistant, Cleaning, Secretary, Librarian. Outliers here include Administrative Officer and Architect, but they are outweighed by the other roles which are typically considered “supportive roles.” Roles of domestic work (cleaning), and other typically lower wage jobs are traditionally occupied by women as demonstrated here. This data shows a clear disparity between the rigor, level, and economic status of the jobs typically performed by men and women indicating more progress necessary in advancing the status of work-place equality.</p>
 </section>
-<section id="preliminary-data-visualization-3---unpaid-care-work-female-male-ratio" class="level3">
-<h3 class="anchored" data-anchor-id="preliminary-data-visualization-3---unpaid-care-work-female-male-ratio">Preliminary Data Visualization #3 - Unpaid Care Work Female-Male Ratio</h3>
+<section id="unpaid-care-work-female-male-ratio" class="level3">
+<h3 class="anchored" data-anchor-id="unpaid-care-work-female-male-ratio">Unpaid Care Work Female-Male Ratio</h3>
 <p>Now let’s analyze how much care work men/women do on average to understand where they may be spending their time other than work. This is to see how much women/men work in terms of unpaid labor. I seek to answer the sub-question: <strong>How are men/women involved with out of work activities like care without pay?</strong></p>
 <p>I found this dataset to work through this: https://www.kaggle.com/datasets/imtkaggleteam/womens-right</p>
-<div id="561be29d" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'unpaid_work.csv'</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(file_path)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Sort data by female-male ratio of time devoted to unpaid care work</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>sorted_data <span class="op">=</span> data.sort_values(by<span class="op">=</span><span class="st">'Female to male ratio of time devoted to unpaid care work (OECD (2014))'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Select and extract ratios &amp; 15 country names for highest female-male ratios</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>top_countries <span class="op">=</span> sorted_data.head(<span class="dv">15</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>top_ratios <span class="op">=</span> top_countries[<span class="st">'Female to male ratio of time devoted to unpaid care work (OECD (2014))'</span>]</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>top_entities <span class="op">=</span> top_countries[<span class="st">'Entity'</span>]</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create pie chart to visualize distribution of ratios among top 15 countries</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>plt.pie(top_ratios, labels<span class="op">=</span>top_entities, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">140</span>)</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 15 Countries by Female to Male Ratio of Unpaid Care Work (2014)</span><span class="ch">\n\n</span><span class="st">'</span>)</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="561be29d" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'unpaid_work.csv'</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(file_path)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Sort data by female-male ratio of time devoted to unpaid care work</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sorted_data <span class="op">=</span> data.sort_values(by<span class="op">=</span><span class="st">'Female to male ratio of time devoted to unpaid care work (OECD (2014))'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Select and extract ratios &amp; 15 country names for highest female-male ratios</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>top_countries <span class="op">=</span> sorted_data.head(<span class="dv">15</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>top_ratios <span class="op">=</span> top_countries[<span class="st">'Female to male ratio of time devoted to unpaid care work (OECD (2014))'</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>top_entities <span class="op">=</span> top_countries[<span class="st">'Entity'</span>]</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Create pie chart to visualize distribution of ratios among top 15 countries</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>))</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.pie(top_ratios, labels<span class="op">=</span>top_entities, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, startangle<span class="op">=</span><span class="dv">140</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Top 15 Countries by Female to Male Ratio of Unpaid Care Work (2014)</span><span class="ch">\n\n</span><span class="st">'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'equal'</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Blog Notebook_files/figure-html/cell-3-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This chart depicts the female to male ratio of unpaid care work in the top 15 countries for 2014. While dated, it reveals a global gender imbalance in the distribution of unpaid labor. In countries like Mali, women contribute 17.3% of the unpaid care work, which alludes to a large burden on women with far-reaching implications. These high percentages suggest that women in the top 15 regions are dedicating a massive portion of their time to caregiving responsibilities, which can limit their participation in paid employment, educational pursuits, and other personal development opportunities. Contrastingly, men who do not have to dedicate their time towards this, can explore these opportunities and continue to grow. Further, this gender disparity in unpaid care work perpetuates a cycle of economic dependency and limits women’s financial independence. In countries like Pakistan (10.2%) and India (9.8%), the heavy load of unpaid care work on women reflects deep-rooted cultural norms and systemic barriers that reinforce traditional gender roles. Women here can find it challenging to pursue careers or engage in economic ventures furthering the gap that exists. Even in countries with lower percentages like Portugal (4.2%), and Cambodia (4.0%), women are always performing more unpaid care work. This imbalance is clearly visible across the world, and addressing it is essential to empower women to be able to fully participate in the economic sector of society rather than being restricted by other duties that men do not share.</p>
+</section>
+<section id="comfort-and-safety-in-the-workplace-by-gender" class="level3">
+<h3 class="anchored" data-anchor-id="comfort-and-safety-in-the-workplace-by-gender">Comfort and Safety in the Workplace by Gender</h3>
+<p>Now let’s analyze actual employee survey data to gain an understanding of how real employees of both genders truly feel about their jobs and employment. This dataset is based upon a City of Tempe survey in 2018. I seek to answer the sub-question: <strong>What does comfort in the workplace look like by gender?</strong></p>
+<p>Here is the dataset: https://data.world/city-of-tempe/053e6c31-6d76-46f4-b0b8-7ab10e466387https://data.world/city-of-tempe/053e6c31-6d76-46f4-b0b8-7ab10e466387</p>
+<div id="c01e1c67" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'employee_survey_data.csv'</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(file_path)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Select columns that choose gender and the keyword 'safe and comfortable'</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>gender_columns <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="st">'gender'</span> <span class="kw">in</span> col.lower()]</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>comfort_columns <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="st">'safe and comfortable'</span> <span class="kw">in</span> col.lower()]</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#If more than one, select the first one</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>gender_column <span class="op">=</span> gender_columns[<span class="dv">0</span>] <span class="cf">if</span> gender_columns <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>comfort_column <span class="op">=</span> comfort_columns[<span class="dv">0</span>] <span class="cf">if</span> comfort_columns <span class="cf">else</span> <span class="va">None</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Remove any rows that have missing values in either column</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[gender_column, comfort_column])</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">#Extract gender values and only take male and female </span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>unique_genders <span class="op">=</span> filtered_df[gender_column].unique()[:<span class="dv">2</span>]</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>gender_mapping <span class="op">=</span> {unique_genders[<span class="dv">0</span>]: <span class="st">'Female'</span>, unique_genders[<span class="dv">1</span>]: <span class="st">'Male'</span>}</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>filtered_df[<span class="st">'Gender Mapped'</span>] <span class="op">=</span> filtered_df[gender_column].<span class="bu">map</span>(gender_mapping)</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a boxplot to visualize distribution of comfort and safety scores by gender</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>filtered_df, x<span class="op">=</span><span class="st">'Gender Mapped'</span>, y<span class="op">=</span>comfort_column, hue<span class="op">=</span><span class="st">'Gender Mapped'</span>, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Comfort and Safety Felt at Work by Gender'</span>)</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>)</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Comfort and Safety Score'</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -374,277 +336,101 @@ Female Dominated Jobs:
 </div>
 </div>
 </div>
-<p>This chart depicts the female to male ratio of unpaid care work in the top 15 countries for 2014. While dated, it reveals a global gender imbalance in the distribution of unpaid labor. In countries like Mali, women contribute 17.3% of the unpaid care work, which alludes to a large burden on women with far-reaching implications. These high percentages suggest that women in the top 15 regions are dedicating a massive portion of their time to caregiving responsibilities, which can limit their participation in paid employment, educational pursuits, and other personal development opportunities. Contrastingly, men who do not have to dedicate their time towards this, can explore these opportunities and continue to grow. Further, this gender disparity in unpaid care work perpetuates a cycle of economic dependency and limits women’s financial independence. In countries like Pakistan (10.2%) and India (9.8%), the heavy load of unpaid care work on women reflects deep-rooted cultural norms and systemic barriers that reinforce traditional gender roles. Women here can find it challenging to pursue careers or engage in economic ventures furthering the gap that exists. Even in countries with lower percentages like Portugal (4.2%), and Cambodia (4.0%), women are always performing more unpaid care work. This imbalance is clearly visible across the world, and addressing it is essential to empower women to be able to fully participate in the economic sector of society rather than being restricted by other duties that men do not share.</p>
+<p>This box plot allows us to gain a comprehensive understanding of what exactly is felt by each of the genders in the workplace. Additionally, we can understand the spread of female / male emotions rather than examining an average to truly capture all the data including outliers. The key findings show that females on average feel less comfortable and safe at work compared to their male colleagues. The median comfort and safety score for Women is 4 while Males is 5. Hence, on average it can be determined that men have a more comfortable experience in the work environment. The IQR range (middle 50% of scores) is slightly broader for Males indicating more variance in experiences of safety versus discomfort. For females, this range is more concentrated around the lower median which highlights a constant issue with workplace comfort and safety. Examining outliers can also show that there are some individuals with unusually low scores - likely due to harassment, explicit discrimination, or other adverse circumstances - but also some individuals with high scores for both Men and Women. Generally, the observed disparity in feelings of safety and comfort can lead to lower job satisfaction, higher stress, and decreased productivity in women, and can explain lower career progression/retention rates. They may choose to leave such jobs or avoid some industries altogether.</p>
 </section>
-<section id="preliminary-data-visualization-3---comfort-and-safety-in-the-workplace-by-gender" class="level3">
-<h3 class="anchored" data-anchor-id="preliminary-data-visualization-3---comfort-and-safety-in-the-workplace-by-gender">Preliminary Data Visualization #3 - Comfort and Safety in the Workplace by Gender</h3>
-<p>Now let’s analyze actual employee survey data to gain an understanding of how real employees of both genders truly feel about their jobs and employment. This dataset is based upon a City of Tempe survey in 2018. I seek to answer the sub-question: <strong>What does comfort in the workplace look like by gender?</strong></p>
-<p>Here is the dataset: https://data.world/city-of-tempe/053e6c31-6d76-46f4-b0b8-7ab10e466387https://data.world/city-of-tempe/053e6c31-6d76-46f4-b0b8-7ab10e466387</p>
-<p>First let us just examine this dataset and observe some facts about it. This way we can gain a better understanding of what it may be able to provide.</p>
-<div id="b5a9f8f8" class="cell" data-execution_count="4">
+<section id="women-in-leadership" class="level3">
+<h3 class="anchored" data-anchor-id="women-in-leadership">Women in Leadership</h3>
+<p>We can start with preliminarily exploring what opportunity looks like for Women in leadership roles. To evaluate this, we will explore two datasets - one for US Senate Positions occupied, and one for CEOs. I aim to complete the answer to the sub-question: <strong>What does professional representation look like by gender in popular jobs?</strong></p>
+<p>These datasets are sourced from: https://www.pewresearch.org/social-trends/fact-sheet/the-data-on-women-leaders/</p>
+<div id="442f5a78" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert percentages to floats</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'ceo_women.csv'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Share of CEOs who are women'</span>] <span class="op">=</span> df[<span class="st">'Share of CEOs who are women'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a line plot that visualizes the trend of Women CEOs overtime</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Share of CEOs who are women'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'teal'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Women CEOs Overtime'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Women CEOs (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Blog Notebook_files/figure-html/cell-5-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="e324aabc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'employee_survey_data.csv'</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(file_path)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Print out the statistics for all the data depending on question</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Descriptive Statistics:"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe(include<span class="op">=</span><span class="st">'all'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Descriptive Statistics:
-       Q1[1  I receive training to do my job ef  \
-count                                942.000000   
-mean                                   3.821656   
-std                                    1.177200   
-min                                    1.000000   
-25%                                    3.000000   
-50%                                    4.000000   
-75%                                    5.000000   
-max                                    9.000000   
-
-       Q1[2  There is someone at work who encou  \
-count                                942.000000   
-mean                                   3.642251   
-std                                    1.405333   
-min                                    1.000000   
-25%                                    3.000000   
-50%                                    4.000000   
-75%                                    5.000000   
-max                                    9.000000   
-
-       Q1[3  I have been mentored at work]  \
-count                           942.000000   
-mean                              3.495754   
-std                               1.586836   
-min                               1.000000   
-25%                               2.000000   
-50%                               4.000000   
-75%                               4.000000   
-max                               9.000000   
-
-       Q1[4  I have received fair consideration  \
-count                                942.000000   
-mean                                   3.921444   
-std                                    2.012761   
-min                                    1.000000   
-25%                                    3.000000   
-50%                                    4.000000   
-75%                                    5.000000   
-max                                    9.000000   
-
-       Q1[5  I am aware of the City's education  \
-count                                942.000000   
-mean                                   4.154989   
-std                                    1.299625   
-min                                    1.000000   
-25%                                    4.000000   
-50%                                    4.000000   
-75%                                    5.000000   
-max                                    9.000000   
-
-       Q1[6  The City's programs related to pro  \
-count                                942.000000   
-mean                                   3.785563   
-std                                    1.940859   
-min                                    1.000000   
-25%                                    3.000000   
-50%                                    3.000000   
-75%                                    4.000000   
-max                                    9.000000   
-
-       Q1[7  Overall  I am satisfied with the p  Q2[1  City Manager's Office]  \
-count                                942.000000                    942.000000   
-mean                                   3.780255                      4.537155   
-std                                    1.617358                      2.417655   
-min                                    1.000000                      1.000000   
-25%                                    3.000000                      3.000000   
-50%                                    4.000000                      4.000000   
-75%                                    4.000000                      5.000000   
-max                                    9.000000                      9.000000   
-
-       Q2[2  Strategic Management and Diversity  Q2[3  Human Resources]  ...  \
-count                                942.000000              942.000000  ...   
-mean                                   4.521231                4.067941  ...   
-std                                    2.434056                1.873143  ...   
-min                                    1.000000                1.000000  ...   
-25%                                    3.000000                3.000000  ...   
-50%                                    4.000000                4.000000  ...   
-75%                                    5.000000                5.000000  ...   
-max                                    9.000000                9.000000  ...   
-
-       Q8  Are you aware of the Council priorit  \
-count                                942.000000   
-mean                                   1.843949   
-std                                    1.924190   
-min                                    1.000000   
-25%                                    1.000000   
-50%                                    1.000000   
-75%                                    2.000000   
-max                                    9.000000   
-
-       Q9  Are you proud to work for the City o  \
-count                                942.000000   
-mean                                   2.094480   
-std                                    2.697382   
-min                                    1.000000   
-25%                                    1.000000   
-50%                                    1.000000   
-75%                                    1.000000   
-max                                    9.000000   
-
-       Q10  Overall  how satisfied are you with  \
-count                                942.000000   
-mean                                   2.304671   
-std                                    1.920182   
-min                                    1.000000   
-25%                                    1.000000   
-50%                                    2.000000   
-75%                                    2.000000   
-max                                    9.000000   
-
-       Q11  How has the quality of the environm  \
-count                                942.000000   
-mean                                   3.141189   
-std                                    2.011186   
-min                                    1.000000   
-25%                                    2.000000   
-50%                                    3.000000   
-75%                                    4.000000   
-max                                    9.000000   
-
-       Q12  Would you recommend the City of Tem  \
-count                                942.000000   
-mean                                   2.435244   
-std                                    2.982690   
-min                                    1.000000   
-25%                                    1.000000   
-50%                                    1.000000   
-75%                                    1.000000   
-max                                    9.000000   
-
-       Q13  Does the City's working environment  \
-count                                942.000000   
-mean                                   2.425690   
-std                                    2.681122   
-min                                    1.000000   
-25%                                    1.000000   
-50%                                    1.000000   
-75%                                    2.000000   
-max                                    9.000000   
-
-       Q14  I would like to finish my public se  \
-count                                942.000000   
-mean                                   2.771762   
-std                                    3.272909   
-min                                    1.000000   
-25%                                    1.000000   
-50%                                    1.000000   
-75%                                    2.000000   
-max                                    9.000000   
-
-       Q15  I have applied for a new position w  \
-count                                942.000000   
-mean                                   2.085987   
-std                                    1.799762   
-min                                    1.000000   
-25%                                    1.000000   
-50%                                    2.000000   
-75%                                    2.000000   
-max                                    9.000000   
-
-       Q16  What gender do you identify with?  \
-count                              942.000000   
-mean                                 2.214437   
-std                                  2.070152   
-min                                  1.000000   
-25%                                  1.000000   
-50%                                  2.000000   
-75%                                  2.000000   
-max                                  9.000000   
-
-       Q18  In which department do you work?  
-count                             942.000000  
-mean                               17.313163  
-std                                28.241042  
-min                                 1.000000  
-25%                                 6.000000  
-50%                                 9.000000  
-75%                                 9.000000  
-max                                99.000000  
-
-[8 rows x 79 columns]</code></pre>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert percentages to floats</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'senate_women.csv'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Women in Senate'</span>] <span class="op">=</span> df[<span class="st">'Women in Senate'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a line plot that visualizes the trend of Women Senators overtime</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Women in Senate'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'pink'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Women Senators Overtime'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Female Senators (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Blog Notebook_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<p>Now let us see which columns we can explore out of this database that may have some of the keywords that we are searching for in terms of quality of life at work and general satisfaction.</p>
-<div id="1c6925b5" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'employee_survey_data.csv'</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(file_path)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#List the keywords that we want to search for and any columns that contain those</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>keywords <span class="op">=</span> [<span class="st">'safe'</span>, <span class="st">'comfort'</span>, <span class="st">'satisfied'</span>, <span class="st">'support'</span>, <span class="st">'fair'</span>]</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>matching_columns <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="bu">any</span>(keyword <span class="kw">in</span> col.lower() <span class="cf">for</span> keyword <span class="kw">in</span> keywords)]</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Print out results</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Columns containing the keywords 'safe', 'comfort', 'satisfied', 'fair', or 'support':"</span>)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> column <span class="kw">in</span> matching_columns:</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(column)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Columns containing the keywords 'safe', 'comfort', 'satisfied', 'fair', or 'support':
-Q1[4  I have received fair consideration
-Q1[7  Overall  I am satisfied with the p
-Q3[3  The Safe Haven process]
-Q3[7  The City supports those with a dis
-Q3[8  Overall  I am satisfied with the s
-Q4[4  I am comfortable expressing my opi
-Q4[12  My immediate supervisor supports
-Q4[17  As a supervisor  I am supported w
-Q4[23  I feel safe and comfortable in my
-Q4[26  Overall  I am satisfied with the
-Q5[5  The amount I am paid is fair for t
-Q5[6  I am satisfied with the City's def
-Q6[11  Overall  I am satisfied with the
-Q7[3  Overall  I am very satisfied with
-Q10  Overall  how satisfied are you with</code></pre>
 </div>
-</div>
-<p>Let’s examine in detail how safe and comfortable both men and women feel in the workplace.</p>
-<div id="c01e1c67" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>file_path <span class="op">=</span> <span class="st">'employee_survey_data.csv'</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(file_path)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Select columns that choose gender and the keyword 'safe and comfortable'</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>gender_columns <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="st">'gender'</span> <span class="kw">in</span> col.lower()]</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>comfort_columns <span class="op">=</span> [col <span class="cf">for</span> col <span class="kw">in</span> df.columns <span class="cf">if</span> <span class="st">'safe and comfortable'</span> <span class="kw">in</span> col.lower()]</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#If more than one, select the first one</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>gender_column <span class="op">=</span> gender_columns[<span class="dv">0</span>] <span class="cf">if</span> gender_columns <span class="cf">else</span> <span class="va">None</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>comfort_column <span class="op">=</span> comfort_columns[<span class="dv">0</span>] <span class="cf">if</span> comfort_columns <span class="cf">else</span> <span class="va">None</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Remove any rows that have missing values in either column</span></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>filtered_df <span class="op">=</span> df.dropna(subset<span class="op">=</span>[gender_column, comfort_column])</span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#Extract gender values and only take male and female </span></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>unique_genders <span class="op">=</span> filtered_df[gender_column].unique()[:<span class="dv">2</span>]</span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>gender_mapping <span class="op">=</span> {unique_genders[<span class="dv">0</span>]: <span class="st">'Female'</span>, unique_genders[<span class="dv">1</span>]: <span class="st">'Male'</span>}</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>filtered_df[<span class="st">'Gender Mapped'</span>] <span class="op">=</span> filtered_df[gender_column].<span class="bu">map</span>(gender_mapping)</span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a boxplot to visualize distribution of comfort and safety scores by gender</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>filtered_df, x<span class="op">=</span><span class="st">'Gender Mapped'</span>, y<span class="op">=</span>comfort_column, hue<span class="op">=</span><span class="st">'Gender Mapped'</span>, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribution of Comfort and Safety Felt at Work by Gender'</span>)</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>)</span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Comfort and Safety Score'</span>)</span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now lets see how much growth happens from year to year in terms of the percent increase in the women in leadership positions to understand where exactly they stand.</p>
+<div id="9a6f837c" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>senate_df <span class="op">=</span> pd.read_csv(<span class="st">'senate_women.csv'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>ceo_df <span class="op">=</span> pd.read_csv(<span class="st">'ceo_women.csv'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>senate_df[<span class="st">'Women in Senate'</span>] <span class="op">=</span> senate_df[<span class="st">'Women in Senate'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>ceo_df[<span class="st">'Share of CEOs who are women'</span>] <span class="op">=</span> ceo_df[<span class="st">'Share of CEOs who are women'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate yearly percentage growth for women in both categories</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>senate_df[<span class="st">'Senate Growth (%)'</span>] <span class="op">=</span> senate_df[<span class="st">'Women in Senate'</span>].diff().fillna(<span class="dv">0</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>ceo_df[<span class="st">'CEO Growth (%)'</span>] <span class="op">=</span> ceo_df[<span class="st">'Share of CEOs who are women'</span>].diff().fillna(<span class="dv">0</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Merge the two DataFrames on the Year column</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.merge(senate_df[[<span class="st">'Year'</span>, <span class="st">'Senate Growth (%)'</span>]], ceo_df[[<span class="st">'Year'</span>, <span class="st">'CEO Growth (%)'</span>]], on<span class="op">=</span><span class="st">'Year'</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot the Leadership growth Data</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>combined_df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Senate Growth (%)'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'pink'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Women in Senate Growth'</span>)</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>combined_df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'CEO Growth (%)'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'teal'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Women CEOs Growth'</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Yearly Percent Growth of Women in Leadership'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Percent Growth (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -653,55 +439,89 @@ Q10  Overall  how satisfied are you with</code></pre>
 </div>
 </div>
 </div>
-<p>This box plot allows us to gain a comprehensive understanding of what exactly is felt by each of the genders in the workplace. Additionally, we can understand the spread of female / male emotions rather than examining an average to truly capture all the data including outliers. The key findings show that females on average feel less comfortable and safe at work compared to their male colleagues. The median comfort and safety score for Women is 4 while Males is 5. Hence, on average it can be determined that men have a more comfortable experience in the work environment. The IQR range (middle 50% of scores) is slightly broader for Males indicating more variance in experiences of safety versus discomfort. For females, this range is more concentrated around the lower median which highlights a constant issue with workplace comfort and safety. Examining outliers can also show that there are some individuals with unusually low scores - likely due to harassment, explicit discrimination, or other adverse circumstances - but also some individuals with high scores for both Men and Women. Generally, the observed disparity in feelings of safety and comfort can lead to lower job satisfaction, higher stress, and decreased productivity in women, and can explain lower career progression/retention rates. They may choose to leave such jobs or avoid some industries altogether.</p>
-<p>This concludes our exploratory analysis where we were able to examine three datasets to visualize professional representation by gender and industry, what women deal with in terms of unpaid care work, and finally what each gender thinks about the comfort they feel at their job. To do this, we examined some summary information about the data, noticed where outliers may exist, and then made informed decisions about what this data implies.</p>
-<p>However, this data isn’t as focused on the question of the role that gender plays in opportunity. We have not fully explored what leadership opportunities look like for men vs women, pay discrepancies, educational roles and prowess. We will also take a look at some of these through the lens of periods of time to ensure that we are measuring how the difference has changed over time.</p>
+<p>These charts illustrate a troubling but somewhat encouraging narrative about women’s representation in leadership roles. While we observed persistent underrepresentation in the low initial percentages of women CEOs and senators, there is a slight upward trend. This upward trend has only managed to increase women CEOs to a mere 10% and women senators to 25%. Both of these are far under the goal of 50% in an equally led society. Growth in the growth percentage of both is there, but at times there is a decrease in the amount of percentage. Additionally, the growth rates show variability meaning that the progress is largely inconsistent and slow. Women CEO growth is not as constant as Women Senator growth - reflecting the corporate world and its ever changing nature - however it is surprising to see such less women in power. Growth in Women Senators is happening slowly but started earlier, indicating the appearance of political change prior to business change. It’s important to gain perspective on both Governmental and Corporate leadership roles as they serve as two focal points for a country, but can have different nuances to them.</p>
+<p>As I examined information from other sources like the European Women’s Lobby, I noticed this data is replicated in other countries with “the current European Parliament consist[ing] of 63%. men,” and “Across the EU, 85% of mayors are men.” Additionally, the source elaborated on why politics may be selling women short with top reasons being confidence, lack of candidate selection (women are not elected), culture (sexism is rampant), lack of funding (women receive less funding than male counterparts), and finally childcare. All of these reasons are devastating, and as observed earlier, unpaid care - childcare in this situation - continues to hinder women’s careers as men do not share these duties. On the other side, we see some of the same generalizations and stereotypes being made by Women CEOs towards their own, with Forbes article by Orlee Tal stating, “calm authoritativeness that women leaders often bring, especially when compared to some men who talk loudly and at length,” when describing why employees flourish under women leadership. While the intent of such statements is positive, and meant to be uplifting, it could be that the same generalizations meant to explain why a woman is an excellent leader (calm versus talkative), could then be re-molded and used for why she is incapable (quiet versus assertive). Thus, it remains best to leave the biases and stereotypes and judge each individual on their own scale rather than their gender.</p>
 </section>
-</section>
-<section id="methods-results---focused-data-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="methods-results---focused-data-analysis">Methods &amp; Results - Focused Data Analysis</h2>
-<p>In this section we will discuss the <em>methods</em> to garner some <strong>focused</strong> data visualizations and explore what their <em>results</em> mean to our research.</p>
-<section id="focused-visualization-1---women-in-leadership" class="level3">
-<h3 class="anchored" data-anchor-id="focused-visualization-1---women-in-leadership">Focused Visualization #1 - Women in Leadership</h3>
-<p>We can start with preliminarily exploring what opportunity looks like for Women in leadership roles. To evaluate this, we will explore two datasets - one for US Senate Positions occupied, and one for CEOs. I aim to complete the answer to the sub-question: <strong>What does professional representation look like by gender in popular jobs?</strong></p>
-<p>These datasets are sourced from: https://www.pewresearch.org/social-trends/fact-sheet/the-data-on-women-leaders/</p>
-<div id="85d59354" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'ceo_women.csv'</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.head())</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.columns)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Year Share of CEOs who are women
-0  1995                        0.0%
-1  1996                        0.2%
-2  1997                        0.4%
-3  1998                        0.4%
-4  1999                        0.4%
-Index(['Year', 'Share of CEOs who are women'], dtype='object')</code></pre>
+<section id="the-wage-gap-across-the-world" class="level3">
+<h3 class="anchored" data-anchor-id="the-wage-gap-across-the-world">The Wage Gap across the World</h3>
+<p>Next, lets examine the wage gap across the United States. This will allow us to have a better understanding of how women and men are paid for the same work. I aim to answer the sub-question: <strong>Is there any pay discrepancy between the genders?</strong></p>
+<p>Here is the source that provided me with this data: https://nwlc.org/resource/wage-gap-state-women-overall/#</p>
+<div id="f08e7f7b" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Clean payment column by removing $ and , in the column and then converting to float</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'gender_pay_gap.csv'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>] <span class="op">=</span> data[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>].replace(<span class="st">'[\$,]'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>] <span class="op">=</span> data[<span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>].replace(<span class="st">'[\$,]'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Reshape the DataFrame to a long format that we can then plot</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>data_melted <span class="op">=</span> data.melt(id_vars<span class="op">=</span><span class="st">'State'</span>, </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                        value_vars<span class="op">=</span>[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>, <span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>],</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                        var_name<span class="op">=</span><span class="st">'Payment Type'</span>, </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                        value_name<span class="op">=</span><span class="st">'Ratio'</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#General Plotting with Seaborn for style</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">'whitegrid'</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">8</span>))</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(x<span class="op">=</span><span class="st">'State'</span>, y<span class="op">=</span><span class="st">'Ratio'</span>, hue<span class="op">=</span><span class="st">'Payment Type'</span>, data<span class="op">=</span>data_melted, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(ax.get_xticks())</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(ax.get_xticklabels(), rotation<span class="op">=</span><span class="dv">90</span>)</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Comparison of Payment Ratios for Women vs. Men by State'</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'State'</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Payment Ratio'</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Payment Type'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Blog Notebook_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div id="442f5a78" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert percentages to floats</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'ceo_women.csv'</span>)</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Share of CEOs who are women'</span>] <span class="op">=</span> df[<span class="st">'Share of CEOs who are women'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a line plot that visualizes the trend of Women CEOs overtime</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Share of CEOs who are women'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'teal'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Women CEOs Overtime'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Women CEOs (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This chart and output allows exploration on the wage gap by the state across the United States and sheds light on how much a woman is deprived of compared to a man’s dollar. California is one of the “fairest,” averaging around 0.86, and Utah one of the “least fair,” averaging 0.76 for full-time roles. This positions California as one of the more equitable states in terms of the disparity. Part time roles are paid drastically even lower with a max outlier of 0.86 from District of Columbia, and a low of 0.60 in Utah. It is unacceptable for a woman to be paid 0.60 for a man’s dollar - for doing exactly the same amount of work - and highlights an extreme level of wage inequality. This wage gap further explains the disparity between men and women professionally - alluding to the idea that women’s work is unessential and undervalued as opposed to men. This can also explain why women may choose to participate less in certain fields that further exacerbate this difference in pay. The need to rectify these inequalities across different states continues to remain prevalent.</p>
+<p>As noticed in research by the Pew Research Center analysis of median hourly earnings of both full- and part-time workers, “women as a whole continue to be overrepresented in lower-paying occupations relative to their share of the workforce. This may contribute to gender differences in pay.” Women are prioritizing their families and working in jobs that pay less due to knowing that they will be “treated differently by employers.” When it comes to raising a family as well, “research has shown that being a mother can reduce women’s earnings, while fatherhood can increase men’s earnings.” So even though women may be the bearers of higher unpaid care time at home (based on previous data analysis), they do not reap the benefits of their work. Overall, women are constantly undervalued in the workforce with their time and efforts not being compensated the same as men.</p>
+</section>
+<section id="education-levels-by-gender" class="level3">
+<h3 class="anchored" data-anchor-id="education-levels-by-gender">Education Levels by Gender</h3>
+<p>It is time to examine average educational progress for both men and women. This will allow us to gain a key understanding of what has happened from an educational standpoint. I aim to partially answer the sub-question: <strong>What is the difference in education recieved by men and women?</strong></p>
+<p>Here is the source from which I gathered this data: https://www.kaggle.com/datasets/noriuk/us-educational-attainment-19952015?select=1995_2015.csv</p>
+<div id="a08851dd" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'educational_attainment.csv'</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Reshape the DataFrame from wide to long using melt</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>df_melted <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">'Year'</span>, <span class="st">'Age_Range'</span>, <span class="st">'Sex'</span>], </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                    value_vars<span class="op">=</span>[<span class="st">'No_HS_Diploma'</span>, <span class="st">'HS_Diploma'</span>, <span class="st">'Some_College_No_Degree'</span>, <span class="st">'Associate'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Advanced'</span>],</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                    var_name<span class="op">=</span><span class="st">'Education'</span>, </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                    value_name<span class="op">=</span><span class="st">'Count'</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Filter out rows where 'Sex' is both because we only want Male and Female</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_melted[df_melted[<span class="st">'Sex'</span>] <span class="op">!=</span> <span class="st">'Both'</span>]</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>df_agg <span class="op">=</span> df_filtered.groupby([<span class="st">'Sex'</span>, <span class="st">'Education'</span>])[<span class="st">'Count'</span>].<span class="bu">sum</span>().reset_index()</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Revert to wide format</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>df_pivot <span class="op">=</span> df_agg.pivot_table(index<span class="op">=</span><span class="st">'Sex'</span>, columns<span class="op">=</span><span class="st">'Education'</span>, values<span class="op">=</span><span class="st">'Count'</span>, fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df_pivot.plot(kind<span class="op">=</span><span class="st">'bar'</span>, stacked<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>), colormap<span class="op">=</span><span class="st">'tab20'</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot stacked bar chart</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Educational Attainment by Sex'</span>)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sex'</span>)</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Education Level'</span>)</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -710,27 +530,60 @@ Index(['Year', 'Share of CEOs who are women'], dtype='object')</code></pre>
 </div>
 </div>
 </div>
-<div id="e324aabc" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert percentages to floats</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'senate_women.csv'</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Women in Senate'</span>] <span class="op">=</span> df[<span class="st">'Women in Senate'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Create a line plot that visualizes the trend of Women Senators overtime</span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Women in Senate'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'pink'</span>, linewidth<span class="op">=</span><span class="dv">2</span>)</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Women Senators Overtime'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Female Senators (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The data presented by the chart and in this table showcases the percentages of educational attainment by sex across various levels of education, providing insight into gender disparities in education and their implications on workplace dynamics. The table shows a surprising result - the percentage of males and females achieving Advanced education is only a 2.5% gap from each other - displaying how females are ranked in their degrees even though they may not be in the workforce. Meanwhile, males appear to have a higher percentage in categories such as No_HS_Diploma (58.16% vs.&nbsp;41.84%) and HS_Diploma (53.98% vs.&nbsp;46.02%), suggesting that while more females are advancing into higher education, a significant number of males are still remaining at the high school level. This educational pattern, where women are more likely to attain higher education degrees yet men predominate the workforce at lower educational levels, shows societal trends in the disparity between women and men. Despite women’s higher educational attainment, they are still being underrepresented in high-ranking positions in the industry. This disconnect between educational attainment and occupational status alludes to the same structural barriers that impede women’s career progression, like implicit biases, unequal opportunities, and the glass ceiling effect (where women are capped at a certain position). These barriers contribute to a persistent gender gap in leadership and decision-making roles, despite the fact that women are often as, or more, educated than their male counterparts. This data showcases a nuanced interaction between education and gender in the workplace, highlighting the need for policies and initiatives that not only support women’s educational pursuits but also to address the challenges that block women from translating their academic successes into career advances.</p>
+</section>
+<section id="early-performance-and-attendance-by-gender" class="level3">
+<h3 class="anchored" data-anchor-id="early-performance-and-attendance-by-gender">Early Performance and Attendance by Gender</h3>
+<p>Finally, we will examine a performance dataset of multiple young students. This is to examine how Male and Female students perform in school (prior to adulthood) as compared to their gender, and will aid us in determining which on average do better. I aim to completely answer the sub-question: <strong>What is the difference in education recieved by men and women?</strong></p>
+<p>Here is the dataset: https://www.kaggle.com/datasets/rabieelkharoua/students-performance-dataset</p>
+<div id="74fac2af" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'student_performance_data.csv'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Map the values to the Gender - calculate mean GPA and mean Absences for each one</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Gender'</span>] <span class="op">=</span> df[<span class="st">'Gender'</span>].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">'Male'</span>, <span class="dv">1</span>: <span class="st">'Female'</span>})</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>gpa_by_gender <span class="op">=</span> df.groupby(<span class="st">'Gender'</span>)[<span class="st">'GPA'</span>].mean().reset_index()</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>absences_by_gender <span class="op">=</span> df.groupby(<span class="st">'Gender'</span>)[<span class="st">'Absences'</span>].mean().reset_index()</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting subplot for GPA</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>sns.barplot(</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Gender'</span>,</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'GPA'</span>,</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>gpa_by_gender,</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'Gender'</span>,</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">'pastel'</span>,</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="st">".6"</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average GPA by Gender'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average GPA'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>plt.yticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting subplot for Absences</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>sns.barplot(</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Gender'</span>,</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Absences'</span>,</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>absences_by_gender,</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'Gender'</span>,</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">'pastel'</span>,</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="st">".6"</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Absences by Gender'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Absences'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>plt.yticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -739,265 +592,13 @@ Index(['Year', 'Share of CEOs who are women'], dtype='object')</code></pre>
 </div>
 </div>
 </div>
-<p>Now lets see how much growth happens from year to year in terms of the percent increase in the women in leadership positions to understand where exactly they stand.</p>
-<div id="9a6f837c" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>senate_df <span class="op">=</span> pd.read_csv(<span class="st">'senate_women.csv'</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>ceo_df <span class="op">=</span> pd.read_csv(<span class="st">'ceo_women.csv'</span>)</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>senate_df[<span class="st">'Women in Senate'</span>] <span class="op">=</span> senate_df[<span class="st">'Women in Senate'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>ceo_df[<span class="st">'Share of CEOs who are women'</span>] <span class="op">=</span> ceo_df[<span class="st">'Share of CEOs who are women'</span>].<span class="bu">str</span>.rstrip(<span class="st">'%'</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate yearly percentage growth for women in both categories</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>senate_df[<span class="st">'Senate Growth (%)'</span>] <span class="op">=</span> senate_df[<span class="st">'Women in Senate'</span>].diff().fillna(<span class="dv">0</span>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>ceo_df[<span class="st">'CEO Growth (%)'</span>] <span class="op">=</span> ceo_df[<span class="st">'Share of CEOs who are women'</span>].diff().fillna(<span class="dv">0</span>)</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Merge the two DataFrames on the Year column</span></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>combined_df <span class="op">=</span> pd.merge(senate_df[[<span class="st">'Year'</span>, <span class="st">'Senate Growth (%)'</span>]], ceo_df[[<span class="st">'Year'</span>, <span class="st">'CEO Growth (%)'</span>]], on<span class="op">=</span><span class="st">'Year'</span>)</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot the Leadership growth Data</span></span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>combined_df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'Senate Growth (%)'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'pink'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Women in Senate Growth'</span>)</span>
-<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>combined_df, x<span class="op">=</span><span class="st">'Year'</span>, y<span class="op">=</span><span class="st">'CEO Growth (%)'</span>, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'teal'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, label<span class="op">=</span><span class="st">'Women CEOs Growth'</span>)</span>
-<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Yearly Percent Growth of Women in Leadership'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Percent Growth (%)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Blog Notebook_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>These three charts illustrate a troubling but somewhat encouraging narrative about women’s representation in leadership roles. While we observed persistent underrepresentation in the low initial percentages of women CEOs and senators, there is a slight upward trend. This upward trend has only managed to increase women CEOs to a mere 10% and women senators to 25%. Both of these are far under the goal of 50% in an equally led society. Growth in the growth percentage of both is there, but at times there is a decrease in the amount of percentage. Additionally, the growth rates show variability meaning that the progress is largely inconsistent and slow. Women CEO growth is not as constant as Women Senator growth - reflecting the corporate world and its ever changing nature - however it is surprising to see such less women in power. Growth in Women Senators is happening slowly but started earlier, indicating the appearance of political change prior to business change. It’s important to gain perspective on both Governmental and Corporate leadership roles as they serve as two focal points for a country, but can have different nuances to them.</p>
-<p>As I examined information from other sources like the European Women’s Lobby, I noticed this data is replicated in other countries with “the current European Parliament consist[ing] of 63%. men,” and “Across the EU, 85% of mayors are men.” Additionally, the source elaborated on why politics may be selling women short with top reasons being confidence, lack of candidate selection (women are not elected), culture (sexism is rampant), lack of funding (women receive less funding than male counterparts), and finally childcare. All of these reasons are devastating, and as observed earlier, unpaid care - childcare in this situation - continues to hinder women’s careers as men do not share these duties. On the other side, we see some of the same generalizations and stereotypes being made by Women CEOs towards their own, with Forbes article by Orlee Tal stating, “calm authoritativeness that women leaders often bring, especially when compared to some men who talk loudly and at length,” when describing why employees flourish under women leadership. While the intent of such statements is positive, and meant to be uplifting, it could be that the same generalizations meant to explain why a woman is an excellent leader (calm versus talkative), could then be re-molded and used for why she is incapable (quiet versus assertive). Thus, it remains best to leave the biases and stereotypes and judge each individual on their own scale rather than their gender.</p>
-</section>
-<section id="focused-visualization-2---the-wage-gap-across-the-world" class="level3">
-<h3 class="anchored" data-anchor-id="focused-visualization-2---the-wage-gap-across-the-world">Focused Visualization #2 - The Wage Gap across the World</h3>
-<p>Next, lets examine the wage gap across the United States. This will allow us to have a better understanding of how women and men are paid for the same work. I aim to answer the sub-question: <strong>Is there any pay discrepancy between the genders?</strong></p>
-<p>Here is the source that provided me with this data: https://nwlc.org/resource/wage-gap-state-women-overall/#</p>
-<div id="f08e7f7b" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Clean payment column by removing $ and , in the column and then converting to float</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'gender_pay_gap.csv'</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>] <span class="op">=</span> data[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>].replace(<span class="st">'[\$,]'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>] <span class="op">=</span> data[<span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>].replace(<span class="st">'[\$,]'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Reshape the DataFrame to a long format that we can then plot</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>data_melted <span class="op">=</span> data.melt(id_vars<span class="op">=</span><span class="st">'State'</span>, </span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>                        value_vars<span class="op">=</span>[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>, <span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>],</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>                        var_name<span class="op">=</span><span class="st">'Payment Type'</span>, </span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>                        value_name<span class="op">=</span><span class="st">'Ratio'</span>)</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">#General Plotting with Seaborn for style</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">'whitegrid'</span>)</span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">8</span>))</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(x<span class="op">=</span><span class="st">'State'</span>, y<span class="op">=</span><span class="st">'Ratio'</span>, hue<span class="op">=</span><span class="st">'Payment Type'</span>, data<span class="op">=</span>data_melted, palette<span class="op">=</span><span class="st">'viridis'</span>)</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(ax.get_xticks())</span>
-<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels(ax.get_xticklabels(), rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Comparison of Payment Ratios for Women vs. Men by State'</span>)</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'State'</span>)</span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Payment Ratio'</span>)</span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Payment Type'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
-<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Blog Notebook_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Let’s get a better contextual understanding of what this data means. In general, in the US how much money does a woman make for full-time and part-time roles as compared to a man?</p>
-<div id="6d6ba070" class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'gender_pay_gap.csv'</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>] <span class="op">=</span> data[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>].replace(<span class="st">'[\$,]'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>data[<span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>] <span class="op">=</span> data[<span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>].replace(<span class="st">'[\$,]'</span>, <span class="st">''</span>, regex<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Calculate the means of both full time and part time</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>avg_full_time <span class="op">=</span> data[<span class="st">'Full-Time Payment for Women/ Dollar Man Makes'</span>].mean()</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>avg_part_time <span class="op">=</span> data[<span class="st">'Part-Time Payment for Women/ Dollar Man Makes'</span>].mean()</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average Full-Time Payment Ratio for Women (compared to a man's dollar): $</span><span class="sc">{</span>avg_full_time<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Average Part-Time Payment Ratio for Women (compared to a man's dollar): $</span><span class="sc">{</span>avg_part_time<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Average Full-Time Payment Ratio for Women (compared to a man's dollar): $0.82
-Average Part-Time Payment Ratio for Women (compared to a man's dollar): $0.74</code></pre>
-</div>
-</div>
-<p>This chart and output allows exploration on the wage gap by the state across the United States and sheds light on how much a woman is deprived of compared to a man’s dollar. California is one of the “fairest,” averaging around 0.86, and Utah one of the “least fair,” averaging 0.76 for full-time roles. This positions California as one of the more equitable states in terms of the disparity. Part time roles are paid drastically even lower with a max outlier of 0.86 from District of Columbia, and a low of 0.60 in Utah. It is unacceptable for a woman to be paid 0.60 for a man’s dollar - for doing exactly the same amount of work - and highlights an extreme level of wage inequality. This wage gap further explains the disparity between men and women professionally - alluding to the idea that women’s work is unessential and undervalued as opposed to men. This can also explain why women may choose to participate less in certain fields that further exacerbate this difference in pay. The need to rectify these inequalities across different states continues to remain prevalent.</p>
-<p>As noticed in research by the Pew Research Center analysis of median hourly earnings of both full- and part-time workers, “women as a whole continue to be overrepresented in lower-paying occupations relative to their share of the workforce. This may contribute to gender differences in pay.” Women are prioritizing their families and working in jobs that pay less due to knowing that they will be “treated differently by employers.” When it comes to raising a family as well, “research has shown that being a mother can reduce women’s earnings, while fatherhood can increase men’s earnings.” So even though women may be the bearers of higher unpaid care time at home (based on previous data analysis), they do not reap the benefits of their work. Overall, women are constantly undervalued in the workforce with their time and efforts not being compensated the same as men.</p>
-</section>
-<section id="focused-visualization-3---education-levels-by-gender" class="level3">
-<h3 class="anchored" data-anchor-id="focused-visualization-3---education-levels-by-gender">Focused Visualization #3 - Education Levels by Gender</h3>
-<p>It is time to examine average educational progress for both men and women. This will allow us to gain a key understanding of what has happened from an educational standpoint. I aim to partially answer the sub-question: <strong>What is the difference in education recieved by men and women?</strong></p>
-<p>Here is the source from which I gathered this data: https://www.kaggle.com/datasets/noriuk/us-educational-attainment-19952015?select=1995_2015.csv</p>
-<div id="a08851dd" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'educational_attainment.csv'</span>)</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Reshape the DataFrame from wide to long using melt</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>df_melted <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">'Year'</span>, <span class="st">'Age_Range'</span>, <span class="st">'Sex'</span>], </span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                    value_vars<span class="op">=</span>[<span class="st">'No_HS_Diploma'</span>, <span class="st">'HS_Diploma'</span>, <span class="st">'Some_College_No_Degree'</span>, <span class="st">'Associate'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Advanced'</span>],</span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                    var_name<span class="op">=</span><span class="st">'Education'</span>, </span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>                    value_name<span class="op">=</span><span class="st">'Count'</span>)</span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co">#Filter out rows where 'Sex' is both because we only want Male and Female</span></span>
-<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_melted[df_melted[<span class="st">'Sex'</span>] <span class="op">!=</span> <span class="st">'Both'</span>]</span>
-<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>df_agg <span class="op">=</span> df_filtered.groupby([<span class="st">'Sex'</span>, <span class="st">'Education'</span>])[<span class="st">'Count'</span>].<span class="bu">sum</span>().reset_index()</span>
-<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="co">#Revert to wide format</span></span>
-<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>df_pivot <span class="op">=</span> df_agg.pivot_table(index<span class="op">=</span><span class="st">'Sex'</span>, columns<span class="op">=</span><span class="st">'Education'</span>, values<span class="op">=</span><span class="st">'Count'</span>, fill_value<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df_pivot.plot(kind<span class="op">=</span><span class="st">'bar'</span>, stacked<span class="op">=</span><span class="va">True</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">8</span>), colormap<span class="op">=</span><span class="st">'tab20'</span>)</span>
-<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Plot stacked bar chart</span></span>
-<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Educational Attainment by Sex'</span>)</span>
-<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sex'</span>)</span>
-<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Count'</span>)</span>
-<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Education Level'</span>)</span>
-<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Blog Notebook_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Now lets examine the exact percentages of Male and Female in each Education Level so we can better compare exactly what the difference is.</p>
-<div id="8aa90250" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'educational_attainment.csv'</span>)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Reshape from wide to long using melt</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>df_melted <span class="op">=</span> df.melt(id_vars<span class="op">=</span>[<span class="st">'Year'</span>, <span class="st">'Age_Range'</span>, <span class="st">'Sex'</span>], </span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                    value_vars<span class="op">=</span>[<span class="st">'No_HS_Diploma'</span>, <span class="st">'HS_Diploma'</span>, <span class="st">'Some_College_No_Degree'</span>, <span class="st">'Associate'</span>, <span class="st">'Bachelor'</span>, <span class="st">'Advanced'</span>],</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                    var_name<span class="op">=</span><span class="st">'Education'</span>, </span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                    value_name<span class="op">=</span><span class="st">'Count'</span>)</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a><span class="co">#Filter out Both to just focus on Men and Women</span></span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df_melted[df_melted[<span class="st">'Sex'</span>] <span class="op">!=</span> <span class="st">'Both'</span>]</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co">#Group by Sex and Education and sum the count for each group</span></span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>df_agg <span class="op">=</span> df_filtered.groupby([<span class="st">'Sex'</span>, <span class="st">'Education'</span>])[<span class="st">'Count'</span>].<span class="bu">sum</span>().reset_index()</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>df_pivot <span class="op">=</span> df_agg.pivot_table(index<span class="op">=</span><span class="st">'Sex'</span>, columns<span class="op">=</span><span class="st">'Education'</span>, values<span class="op">=</span><span class="st">'Count'</span>, fill_value<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>total_counts <span class="op">=</span> df_pivot.<span class="bu">sum</span>()</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co">#Get the percentages by dividing count for education by total</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>percentages <span class="op">=</span> df_pivot.div(total_counts, axis<span class="op">=</span><span class="dv">1</span>) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Percentages of Educational Attainment by Sex:"</span>)</span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(percentages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Percentages of Educational Attainment by Sex:
-Education   Advanced  Associate   Bachelor  HS_Diploma  No_HS_Diploma  \
-Sex                                                                     
-Female     48.737167   55.19594  50.237357   46.018916      41.837629   
-Male       51.262833   44.80406  49.762643   53.981084      58.162371   
-
-Education  Some_College_No_Degree  
-Sex                                
-Female                  50.663253  
-Male                    49.336747  </code></pre>
-</div>
-</div>
-<p>The data presented by the chart and in this table showcases the percentages of educational attainment by sex across various levels of education, providing insight into gender disparities in education and their implications on workplace dynamics. The table shows a surprising result - the percentage of males and females achieving Advanced education is only a 2.5% gap from each other - displaying how females are ranked in their degrees even though they may not be in the workforce. Meanwhile, males appear to have a higher percentage in categories such as No_HS_Diploma (58.16% vs.&nbsp;41.84%) and HS_Diploma (53.98% vs.&nbsp;46.02%), suggesting that while more females are advancing into higher education, a significant number of males are still remaining at the high school level. This educational pattern, where women are more likely to attain higher education degrees yet men predominate the workforce at lower educational levels, shows societal trends in the disparity between women and men. Despite women’s higher educational attainment, they are still being underrepresented in high-ranking positions in the industry. This disconnect between educational attainment and occupational status alludes to the same structural barriers that impede women’s career progression, like implicit biases, unequal opportunities, and the glass ceiling effect (where women are capped at a certain position). These barriers contribute to a persistent gender gap in leadership and decision-making roles, despite the fact that women are often as, or more, educated than their male counterparts. This data showcases a nuanced interaction between education and gender in the workplace, highlighting the need for policies and initiatives that not only support women’s educational pursuits but also to address the challenges that block women from translating their academic successes into career advances.</p>
-</section>
-<section id="focused-visualization-4---early-performance-and-attendance-by-gender" class="level3">
-<h3 class="anchored" data-anchor-id="focused-visualization-4---early-performance-and-attendance-by-gender">Focused Visualization #4 - Early Performance and Attendance by Gender</h3>
-<p>Finally, we will examine a performance dataset of multiple young students. This is to examine how Male and Female students perform in school (prior to adulthood) as compared to their gender, and will aid us in determining which on average do better. I aim to completely answer the sub-question: <strong>What is the difference in education recieved by men and women?</strong></p>
-<p>Here is the dataset: https://www.kaggle.com/datasets/rabieelkharoua/students-performance-dataset</p>
-<div id="74fac2af" class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'student_performance_data.csv'</span>)</span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Map the values to the Gender - calculate mean GPA and mean Absences for each one</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Gender'</span>] <span class="op">=</span> df[<span class="st">'Gender'</span>].<span class="bu">map</span>({<span class="dv">0</span>: <span class="st">'Male'</span>, <span class="dv">1</span>: <span class="st">'Female'</span>})</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>gpa_by_gender <span class="op">=</span> df.groupby(<span class="st">'Gender'</span>)[<span class="st">'GPA'</span>].mean().reset_index()</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>absences_by_gender <span class="op">=</span> df.groupby(<span class="st">'Gender'</span>)[<span class="st">'Absences'</span>].mean().reset_index()</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting subplot for GPA</span></span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>sns.barplot(</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Gender'</span>,</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'GPA'</span>,</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>gpa_by_gender,</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'Gender'</span>,</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">'pastel'</span>,</span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="st">".6"</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average GPA by Gender'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average GPA'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>plt.yticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a><span class="co">#Plotting subplot for Absences</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>sns.barplot(</span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'Gender'</span>,</span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'Absences'</span>,</span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>absences_by_gender,</span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a>    hue<span class="op">=</span><span class="st">'Gender'</span>,</span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>    palette<span class="op">=</span><span class="st">'pastel'</span>,</span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a>    edgecolor<span class="op">=</span><span class="st">".6"</span></span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Absences by Gender'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Gender'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Absences'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a>plt.yticks(fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb21-46"><a href="#cb21-46" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb21-47"><a href="#cb21-47" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Blog Notebook_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 <p>This visualization allows us to fully understand the distribution of GPA by gender, as well as the school absences by gender. This way we can see how different genders potentially perform in school - which gives an outlook on what educational differences look like at an early age prior to external influences. In this dataset, female students on average have a much higher GPA than males while both share around the same absences. Absences correlate to how much effort a student makes in coming to classes and attending school - so boys and girls are largely making the same efforts. On the other hand, the higher GPA for the female student indicates more skill at the concepts conveyed in class - but can also point to heightened focus, understanding of material, or time spent outside of class learning. Once again, we see this higher GPA is not reflected in the workplace through higher posts. As the students age, they become more exposed to external factors like sexism, biases, stereotypes on how each gender traditionally behaves, connotations on which jobs are meant for different genders, and more. Therefore, it is not surprising to see that while female students sometimes outperform male ones, they generally only do so <em>prior</em> to entering industry (in school) while they are still shielded from the harsher wrongful criticism they face in the future.</p>
 <p>In Lisa Damour’s article “Why Girls Beat Boys at School and Lose to Them at the Office,” for the New York Times, she discusses how “a shortage of competence is less likely to be an obstacle than a shortage of confidence.” This very notion is what allows young girls in school who haven’t yet been exposed to the realities of the workplace to exceed their male peers academically. She also details that the “confidence gap is hardly the only thing keeping women out of top jobs. Women also face gender bias, sexual harassment, and powerful structural barriers in the workplace.” This supplements the findings we have made throughout conducting this research, culminating in the idea that gender bias plays an active role in hindering professional progress.</p>
 </section>
 </section>
-<section id="discussion-of-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-of-analysis">Discussion of Analysis</h2>
-<p>In this section we will apply our learnings from the 7 data visualizations and supplemental sources explored, and delve into how they connect to the focal question.</p>
-<p>To reiterate, the primarily subquestions we explored and answered using our data included: 1. What does professional representation look like by gender in popular jobs? 2. How are men/women involved with out of work activities like care without pay? 3. What does comfort in the workplace look like by gender? 4. Is there any pay discrepancy between the genders? 5. What is the difference in education recieved by men and women?</p>
-<p>The main question to tackle now remains: Does gender still play a role in achieving and navigating educational, and professional opportunities?</p>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p>In this section we will apply our learnings from the 7 data visualizations and supplemental sources explored, and delve into how they connect to the focal question: Does gender still play a role in achieving and navigating educational, and professional opportunities?</p>
 <p>The question of whether gender still plays a role in educational and professional opportunities is complex. While significant progress towards gender equality in recent decades has been made, the data I discussed reveals how gender continues to be a key factor in shaping experiences and outcomes across Professional and Educational pursuits.</p>
 <p>From an educational standpoint, the encouraging findings from the data include the narrowing gap in educational attainment between men and women. Women are achieving higher levels of education at rates comparable to or even surpassing men in many ways. The data indicates that there is only a 2.5% gap between males and females in advanced education degrees. Hence, gender doesn’t necessarily hinder progress in education. This suggests that access to education and the ability to attain academic qualifications have improved for women, reflecting positive societal changes in attitudes towards women’s education. But, this increased educational attainment doesn’t necessarily translate into professional opportunities. Despite their higher levels of academic success, women often face structural barriers that limit their career advancement. This disconnect between educational achievement and professional progress underscores the ongoing impact of gender on career progression, pointing to the presence of systemic issues like racial biases, and unequal opportunities in the workforce.</p>
 <p>In terms of professional progress, the data on occupational segregation clearly shows how gender shapes it. Certain fields remain heavily male-dominated, particularly those involving technical expertise and high-stakes decision-making roles. This indicates gender imbalance, showing historical trends where men occupy roles that are perceived as requiring greater skill or responsibility. On the other hand, women are predominantly found in roles characterized as supportive or lower-wage positions, such as secretarial work, cleaning, and assistant roles. The data also reveals that women disproportionately shoulder the burden of unpaid care responsibilities across the globe, which hinders their ability to engage in professional endeavors. In terms of comfort and safety, women, on average, report feeling less comfortable and safe at work compared to their male counterparts. In terms of Leadership, despite a slight upward trend, women remain significantly underrepresented in leadership roles such as CEOs and senators. Finally, the significant wage gap is also evidence of the gender inequality in professional opportunities, and undervaluation of women’s contributions.</p>
