@@ -1,5 +1,5 @@
 ---
-title: "BlogFinal"
+title: "Posts DGT HUM 140"
 listing:
   contents: posts
   sort: "date desc"
