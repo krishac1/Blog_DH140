@@ -1,5 +1,5 @@
 ---
-title: "Posts DGT HUM 140"
+title: "Posts for DH 140"
 listing:
   contents: posts
   sort: "date desc"
